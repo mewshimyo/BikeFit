@@ -1,0 +1,26 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BikeFit Warren</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if user_signed_in? %>
+	<p>Signed in as : <%= current_user.email %> or <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></p>
+<% else %>
+	<a href="/users/sign_in">Sign In</a> or <a href="/users/sign_up">Sign Up</a>
+<% end %>	
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>
