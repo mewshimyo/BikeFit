@@ -1,9 +1,12 @@
 BikeFit::Application.routes.draw do
+<<<<<<< HEAD
 
   devise_for :users
   get "home/index"
 	root :to => "home#index"
 
+=======
+>>>>>>> parent of 263afc2... Initial Devise Setup
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -26,6 +26,9 @@ BikeFit::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+<<<<<<< HEAD
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+=======
+>>>>>>> parent of 263afc2... Initial Devise Setup
 end
