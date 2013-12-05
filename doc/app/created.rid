@@ -1,0 +1,7 @@
+Thu, 05 Dec 2013 13:57:31 -0500
+README.rdoc	Thu, 05 Dec 2013 13:31:43 -0500
+app/controllers/application_controller.rb	Thu, 05 Dec 2013 13:31:43 -0500
+app/controllers/home_controller.rb	Thu, 05 Dec 2013 13:31:43 -0500
+app/helpers/application_helper.rb	Thu, 05 Dec 2013 13:31:43 -0500
+app/helpers/home_helper.rb	Thu, 05 Dec 2013 13:31:43 -0500
+app/models/user.rb	Thu, 05 Dec 2013 13:31:43 -0500
