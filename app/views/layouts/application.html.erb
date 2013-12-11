@@ -12,21 +12,15 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-	<div class="container">
-	  <div class="row">
-	    <div class="span4">
+
 	      <h1><%= site_name %></h1>
 	      <hr>
-	      <p><% if user_signed_in? %>
-	<p>Signed in as : <%= current_user.email %> or <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></p>
-<% else %>
-	<a href="/users/sign_in">Sign In</a> or <a href="/users/sign_up">Sign Up</a>
-<% end %></p>
-	      <div class="well">
+	      <p><% if user_signed_in? %> <!-- if user is signed in, display sign-out button, if not, display button to sign up or log in -->
+			<p>Signed in as : <%= current_user.email %> or <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></p>
+			<% else %>
+				<a href="/users/sign_in">Sign In</a> or <a href="/users/sign_up">Sign Up</a>
+			<% end %></p><hr>
 	      	<%= yield %>
-	      </div> <!-- well -->
-	    </div> <!-- span4 -->
-	  </div> <!-- row -->
-	</div> <!-- container -->
+
 	</body>
 </html>
