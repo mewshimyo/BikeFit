@@ -24,7 +24,7 @@ class RidesController < ApplicationController
   # POST /rides
   # POST /rides.json
   def create
-    @ride = Ride.new(ride_params)
+    @ride = Ride.new(:user_id => current_user.id, ride_params)
 
     respond_to do |format|
       if @ride.save
