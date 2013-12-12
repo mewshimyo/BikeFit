@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211172416) do
+ActiveRecord::Schema.define(version: 20131212155105) do
 
   create_table "profiles", force: true do |t|
     t.integer  "user_id"
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birthday"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rides", force: true do |t|
+    t.date     "date"
+    t.float    "distance"
+    t.integer  "elevation"
+    t.string   "strava_link"
+    t.integer  "time"
+    t.boolean  "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

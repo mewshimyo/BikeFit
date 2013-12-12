@@ -1,5 +1,7 @@
 BikeFit::Application.routes.draw do
 
+  resources :rides
+
   get "profile/blank"
   get "profile/edit"
   devise_for :users, :controllers => { :registrations => "registrations" }
