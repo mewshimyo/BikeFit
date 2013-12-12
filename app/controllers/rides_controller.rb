@@ -5,6 +5,7 @@ class RidesController < ApplicationController
   # GET /rides.json
   def index
     @rides = Ride.all
+
   end
 
   # GET /rides/1
@@ -15,21 +16,28 @@ class RidesController < ApplicationController
   # GET /rides/new
   def new
     @ride = Ride.new
+    must_be_signed_in
   end
 
   # GET /rides/1/edit
   def edit
+    must_be_signed_in
   end
 
   # POST /rides
   # POST /rides.json
   def create
-    @ride = Ride.new(:user_id => current_user.id, ride_params)
+    must_be_signed_in
+    @ride = Ride.new(ride_params)
 
     respond_to do |format|
       if @ride.save
+        r = Ride.last
+        r.user_id = current_user.id
+        r.save
         format.html { redirect_to @ride, notice: 'Ride was successfully created.' }
         format.json { render action: 'show', status: :created, location: @ride }
+
       else
         format.html { render action: 'new' }
         format.json { render json: @ride.errors, status: :unprocessable_entity }
@@ -40,6 +48,7 @@ class RidesController < ApplicationController
   # PATCH/PUT /rides/1
   # PATCH/PUT /rides/1.json
   def update
+    must_be_signed_in
     respond_to do |format|
       if @ride.update(ride_params)
         format.html { redirect_to @ride, notice: 'Ride was successfully updated.' }
@@ -54,6 +63,7 @@ class RidesController < ApplicationController
   # DELETE /rides/1
   # DELETE /rides/1.json
   def destroy
+    must_be_signed_in
     @ride.destroy
     respond_to do |format|
       format.html { redirect_to rides_url }

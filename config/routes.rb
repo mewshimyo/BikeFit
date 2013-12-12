@@ -1,6 +1,8 @@
 BikeFit::Application.routes.draw do
 
   resources :rides
+  get "rides/new"
+  get "rides/index"
 
   get "profile/blank"
   get "profile/edit"
