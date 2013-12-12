@@ -1,6 +1,8 @@
 BikeFit::Application.routes.draw do
 
-  devise_for :users
+  get "profile/blank"
+  get "profile/edit"
+  devise_for :users, :controllers => { :registrations => "registrations" }
   get "home/index"
 	root :to => "home#index"
 
