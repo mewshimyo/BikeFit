@@ -1,5 +1,7 @@
 BikeFit::Application.routes.draw do
 
+  resources :weights
+
   resources :rides
   get "rides/new"
   get "rides/index"

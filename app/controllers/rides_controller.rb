@@ -29,12 +29,10 @@ class RidesController < ApplicationController
   def create
     must_be_signed_in
     @ride = Ride.new(ride_params)
+    ride.user_id = current_user.id
 
     respond_to do |format|
       if @ride.save
-        r = Ride.last
-        r.user_id = current_user.id
-        r.save
         format.html { redirect_to @ride, notice: 'Ride was successfully created.' }
         format.json { render action: 'show', status: :created, location: @ride }
 
