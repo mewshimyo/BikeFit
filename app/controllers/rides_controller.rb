@@ -28,7 +28,7 @@ class RidesController < ApplicationController
   # POST /rides.json
   def create
     must_be_signed_in
-    @ride = Ride.new(ride_params)
+    @ride = Ride.new(ride_params) #this is seperated because I have no idea how to do this 'properly'
     ride.user_id = current_user.id
 
     respond_to do |format|
